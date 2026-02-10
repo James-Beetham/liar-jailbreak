@@ -1,0 +1,6 @@
+defaults:
+  - base
+  - _self_
+name: liar
+no_q: false
+mod_prompt: false

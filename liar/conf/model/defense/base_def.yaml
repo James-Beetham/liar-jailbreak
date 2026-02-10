@@ -1,0 +1,6 @@
+name: sampling
+enable: false
+mode: extend-suffix
+n: 10
+length: 5
+sigma: 0.4

@@ -1,0 +1,22 @@
+defaults:
+  # - prompter: llama2  # one of: llama2, tiny_llama (see corresponding .yaml in conf/prompter/)
+  - model@adv_llm: gpt2
+  - model@target: vicuna_chat
+  - method: liar
+  - _self_
+repeat: 1
+verbose: false
+log: 
+  disable_tqdm: false
+  tqdm_iter_time: 5 # in minutes
+debug: false
+seed: 2023
+output_dir: ${hydra:run.dir}/${method.name}
+data:
+  data_dir: "./data"
+  test_prefixes_pth: "${data.data_dir}/test_prefixes.csv"
+  affirmative_prefixes_pth: "${data.data_dir}/affirmative_prefixes.csv"
+  just_test: false
+  jailbreakbench: false
+  donotanswer: false
+  maliciousinstruct: false

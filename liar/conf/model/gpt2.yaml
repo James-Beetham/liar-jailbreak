@@ -1,0 +1,13 @@
+defaults:
+  - base_llm
+  - _self_
+
+llm_params:
+  model_name: gpt2
+  checkpoint: gpt2 # or replace with local DIR
+prompt_manager:
+  prompt_template:
+    - key: full_instruct
+      msg: "{full_instruct}"  # loaded from context
+    - key: target
+      msg: "{target}"  # loaded from context

@@ -1,0 +1,16 @@
+
+
+wandb
+
+transformers
+trl
+peft
+sentencepiece
+# tiktoken
+
+hydra-core
+python-dotenv
+
+# Optional (depending on models used)
+together
+openai

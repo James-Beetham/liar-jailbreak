@@ -1,0 +1,51 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "LIAR Full Run",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "module": "liar.liar_jailbreak",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                // "model@target=gpt2",
+                "model@target=vicuna_chat",
+                "target.batch_size=4",
+                "target.gen_params.max_new_tokens=32",
+                // "model@adv_llm=gpt2_pmc",
+                "adv_llm.gen_params.max_new_tokens=30",
+                "adv_llm.gen_params.do_sample=true",
+                "output_dir=outputs/vicuna-gpt2",
+                "data.just_test=true",
+                "repeat=100",
+                // "debug=true",
+            ]
+        },
+        {
+            "name": "LIAR Small Run",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "module": "liar.liar_jailbreak",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "model@target=gpt2", 
+                "target.batch_size=4",
+                "target.gen_params.max_new_tokens=32",
+                "model@adv_llm=gpt2", // default
+                "adv_llm.gen_params.max_new_tokens=30",
+                "adv_llm.gen_params.do_sample=true",
+                "output_dir=outputs/liar-test_run",
+                "data.just_test=true",
+                "repeat=10",
+                // "debug=true",
+            ]
+        }
+    ]
+}

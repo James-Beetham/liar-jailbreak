@@ -1,0 +1,23 @@
+defaults:
+  - defense: base_def
+  - _self_
+batch_size: 4
+llm_params:
+  device: 'cuda:0'
+  freeze: true
+  dtype: float16
+  lora_params: null
+  model_name: ???
+  checkpoint: ??? # or replace with local DIR
+  api: ''
+  api_key: ''
+  api_model: ''
+allow_non_ascii: true
+gen_params:
+  max_new_tokens: 150
+  do_sample: false
+  temperature: null
+  top_p: null
+prompt_manager:
+  xq_wrapper: null
+  prompt_template: ???
